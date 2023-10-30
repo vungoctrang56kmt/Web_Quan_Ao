@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quản lý cửa hàng quần áo</title>
+    <link href="assets/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/jquery-confirm.css" rel="stylesheet" />
+    <link href="assets/mystyle.css" rel="stylesheet" />
+    <link href="assets/toastr.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron p-3 my-3 bg-primary text-white khong-in">
+            <h2 id="app-title">Quản lý cửa hàng quần áo</h2>
+            <p id="app-sologan">
+                Tiên lợi, dễ sử dụng
+            </p>
+            <a href="/" class="btn btn-outline-warning">Trang chủ</a>
+            <a href="nhacc.html" class="btn btn-outline-warning">Nhà cung cấp</a>
+            <a href="SanPham.html" class="btn btn-warning">Sản phẩm</a>
+            <a href="khachhang.html" class="btn btn-outline-warning">Khách hàng</a>
+            <a href="donhang.html" class="btn btn-outline-warning">Đơn hàng</a>
+            <a href="khohang.html" class="btn btn-outline-warning">Kho hàng</a>
+            <a href="nhanvien.html" class="btn btn-outline-warning">Nhân viên</a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Danh sách sản phẩm</h3>
+                <button id="btn-add-san-pham" class="btn btn-primary mb-1">Thêm sản phẩm</button>
+                <div id="ds-san-pham"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalThemSanPham" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" name="Id" id="ipIdHidden"/>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="form-label">Mã sản phẩm</label>
+                                <input type="text" class="form-control" name="MaSP" id="ipMaSp"/>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Tên sản phẩm</label>
+                                <input type="text" class="form-control" name="TenSp" id="ipTenSp" />
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Nhà cung cấp</label>
+                                <select class="form-control" name="NccId" id="sltNcc">
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Size</label>
+                                <input type="text" class="form-control" name="Size" id="ipSize" />
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Màu sắc</label>
+                                <input type="text" class="form-control" name="MauSac" id="ipMauSac" />
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Số lượng</label>
+                                <input type="number" class="form-control" name="SoLuong" id="ipSoLuong" />
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Giá tiền</label>
+                                <input type="number" class="form-control" name="GiaTien" id="ipGiaTien" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnSave">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="assets/jquery.min.js"></script>
+<script src="assets/jquery-confirm.js"></script>
+<script src="assets/bootstrap.bundle.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<script src="assets/toastr.min.js"></script>
+<script src="assets/sanpham.js"></script>

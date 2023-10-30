@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quản lý cửa hàng quần áo</title>
+    <link href="assets/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/jquery-confirm.css" rel="stylesheet" />
+    <link href="assets/mystyle.css" rel="stylesheet" />
+    <link href="assets/toastr.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron p-3 my-3 bg-primary text-white khong-in">
+            <h2 id="app-title">Quản lý cửa hàng quần áo</h2>
+            <p id="app-sologan">
+                Tiên lợi, dễ sử dụng
+            </p>
+            <a href="/" class="btn btn-outline-warning">Trang chủ</a>
+            <a href="nhacc.html" class="btn btn-outline-warning">Nhà cung cấp</a>
+            <a href="SanPham.html" class="btn btn-outline-warning">Sản phẩm</a>
+            <a href="khachhang.html" class="btn btn-outline-warning">Khách hàng</a>
+            <a href="donhang.html" class="btn btn-warning">Đơn hàng</a>
+            <a href="khohang.html" class="btn btn-outline-warning">Kho hàng</a>
+            <a href="nhanvien.html" class="btn btn-outline-warning">Nhân viên</a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Danh sách đơn hàng</h3>
+                <button id="btn-add-don-hang" class="btn btn-primary mb-1">Thêm đơn hàng</button>
+                <div id="ds-don-hang"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalThemDonHang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleDonHang"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" name="Id" id="ipIdHidden" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="form-label">Tên đơn hàng</label>
+                                <input type="text" class="form-control" name="TenDH" id="ipTenDH" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnSaveDH">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalCTDonHang" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chi tiết đơn hàng <span class="text-danger" id="titleCTDH"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="ipHiddenIdCTDH" />
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <label class="form-label">Sản phẩm</label>
+                            <select class="form-control" id="sltSanPham">
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Số lượng</label>
+                            <input type="number" class="form-control" id="ipSoluongBan" value="0" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Giá tiền</label>
+                            <input type="number" class="form-control" id="ipGiaBan" value="0" />
+                        </div>
+                        <div class="col-md-2" style="margin-top:31px;">
+                            <button type="button" class="btn btn-primary" id="btnThemCTDH">Thêm</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="ds-ct-don-hang"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="assets/jquery.min.js"></script>
+<script src="assets/jquery-confirm.js"></script>
+<script src="assets/bootstrap.bundle.min.js"></script>
+<script src="assets/moment.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<script src="assets/toastr.min.js"></script>
+<script src="assets/donhang.js"></script>

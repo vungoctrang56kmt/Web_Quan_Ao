@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quản lý cửa hàng quần áo</title>
+    <link href="assets/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/mystyle.css" rel="stylesheet" />
+    <link href="assets/jquery-confirm.css" rel="stylesheet" />
+    <link href="assets/toastr.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron p-3 my-3 bg-primary text-white khong-in">
+            <h2 id="app-title">Quản lý cửa hàng quần áo</h2>
+            <p id="app-sologan">
+                Tiên lợi, dễ sử dụng
+            </p>
+            <a href="/" class="btn btn-outline-warning">Trang chủ</a>
+            <a href="nhacc.html" class="btn btn-outline-warning">Nhà cung cấp</a>
+            <a href="SanPham.html" class="btn btn-outline-warning">Sản phẩm</a>
+            <a href="khachhang.html" class="btn btn-warning">Khách hàng</a>
+            <a href="donhang.html" class="btn btn-outline-warning">Đơn hàng</a>
+            <a href="khohang.html" class="btn btn-outline-warning">Kho hàng</a>
+            <a href="nhanvien.html" class="btn btn-outline-warning">Nhân viên</a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Danh sách khách hàng</h3>
+                <button id="btn-add-khachhang" class="btn btn-primary mb-1">Thêm khách hàng</button>
+                <div id="ds-khach-hang"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalThemSuaKhachHang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleKhachHang"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" name="Id" id="ipIdHidden" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="form-label">Tên khách hàng</label>
+                                <input type="text" class="form-control" name="TenKh" id="ipTenKH" />
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Số điện thoại</label>
+                                <input type="text" class="form-control" name="SDT" id="ipSDT" />
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Ngày sinh</label>
+                                <input type="date" class="form-control" name="NgaySinh" id="ipNgaySinh" />
+
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Địa chỉ</label>
+                                <input type="text" class="form-control" name="DiaChi" id="ipDiaChi" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnSave">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="assets/jquery.min.js"></script>
+<script src="assets/jquery-confirm.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<script src="assets/bootstrap.bundle.min.js"></script>
+<script src="assets/toastr.min.js"></script>
+<script src="assets/khachhang.js"></script>
+<script src="assets/moment.js"></script>
